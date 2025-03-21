@@ -1,320 +1,296 @@
-export const questions = [
-  {
-    id: 1,
-    text: "あなたが考えているキャラクターは人間ですか？",
-    trait: "isHuman"
-  },
-  {
-    id: 2,
-    text: "あなたが考えているキャラクターは女性ですか？",
-    trait: "isFemale"
-  },
-  {
-    id: 3,
-    text: "あなたが考えているキャラクターは魔法を使えますか？",
-    trait: "hasMagic"
-  },
-  {
-    id: 4,
-    text: "あなたが考えているキャラクターはアニメに登場しますか？",
-    trait: "isAnime"
-  },
-  {
-    id: 5,
-    text: "あなたが考えているキャラクターは武器を持っていますか？",
-    trait: "hasWeapon"
-  },
-  {
-    id: 6,
-    text: "あなたが考えているキャラクターは主人公ですか？",
-    trait: "isProtagonist"
-  },
-  {
-    id: 7,
-    text: "あなたが考えているキャラクターは飛ぶことができますか？",
-    trait: "canFly"
-  },
-  {
-    id: 8,
-    text: "あなたが考えているキャラクターはペットや仲間の動物がいますか？",
-    trait: "hasAnimalCompanion"
-  },
-  {
-    id: 9,
-    text: "あなたが考えているキャラクターは特殊な能力を持っていますか？",
-    trait: "hasSpecialPowers"
-  },
-  {
-    id: 10,
-    text: "あなたが考えているキャラクターは現代に生きていますか？",
-    trait: "isModernEra"
-  },
-  {
-    id: 11,
-    text: "あなたが考えているキャラクターは動物または動物の特徴を持っていますか？",
-    trait: "isAnimalLike"
-  },
-  {
-    id: 12,
-    text: "あなたが考えているキャラクターは子供に人気がありますか？",
-    trait: "isPopularWithKids"
-  }
-];
-
 export const characters = [
   {
     id: 1,
-    name: "桜木 花道",
-    image: "/sakuragi.jpg",
-    description: "『SLAM DUNK』の主人公で、赤髪の高校生バスケットボール選手。",
+    name: "織田信長",
+    description: "戦国時代の武将。革新的な政策と強力な軍事力で知られる。",
     traits: {
-      isHuman: true,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: true,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: false,
-      isModernEra: true
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: false,
+      magical: false,
+    },
   },
   {
     id: 2,
-    name: "セーラームーン",
-    image: "/sailormoon.jpg",
-    description: "月野うさぎの変身した姿で、月のパワーを持つ美少女戦士。",
+    name: "卑弥呼",
+    description: "3世紀頃の日本の女王。邪馬台国の支配者として知られる。",
     traits: {
-      isHuman: true,
-      isFemale: true,
-      hasMagic: true,
-      isAnime: true,
-      hasWeapon: true,
-      isProtagonist: true,
-      canFly: false,
-      hasAnimalCompanion: true,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: true,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: false,
+      magical: true,
+    },
   },
   {
     id: 3,
-    name: "孫悟空",
-    image: "/goku.jpg",
-    description: "『ドラゴンボール』の主人公で、サイヤ人の血を引く強力な戦士。",
+    name: "坂本龍馬",
+    description: "幕末の志士。薩長同盟の成立に尽力し、日本の近代化に貢献。",
     traits: {
-      isHuman: false,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: true,
-      canFly: true,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: true,
+      magical: false,
+    },
   },
   {
     id: 4,
-    name: "ピカチュウ",
-    image: "/pikachu.jpg",
-    description: "『ポケットモンスター』シリーズの電気タイプのポケモン。",
+    name: "紫式部",
+    description: "平安時代の女流作家。『源氏物語』の作者として知られる。",
     traits: {
-      isHuman: false,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: false,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: true,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: false,
+      magical: false,
+    },
   },
   {
     id: 5,
-    name: "鬼滅の刃 竈門炭治郎",
-    image: "/tanjiro.jpg",
-    description: "『鬼滅の刃』の主人公で、妹を人間に戻すために戦う鬼殺隊士。",
+    name: "徳川家康",
+    description: "江戸幕府の初代将軍。260年以上にわたる平和な時代を築いた。",
     traits: {
-      isHuman: true,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: true,
-      isProtagonist: true,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: false
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: false,
+      magical: false,
+    },
   },
   {
     id: 6,
-    name: "ハリー・ポッター",
-    image: "/harry.jpg",
-    description: "J.K.ローリングの小説シリーズの主人公で、若い魔法使い。",
+    name: "孫悟空",
+    description: "中国の小説『西遊記』の主人公。強力な力と機知に富む。",
     traits: {
-      isHuman: true,
-      isFemale: false,
-      hasMagic: true,
-      isAnime: false,
-      hasWeapon: true,
-      isProtagonist: true,
-      canFly: true,
-      hasAnimalCompanion: true,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: true,
+      anime: true,
+      historical: false,
+      japanese: false,
+      hero: true,
+      magical: true,
+    },
   },
   {
     id: 7,
-    name: "暁美ほむら",
-    image: "/homura.jpg",
-    description: "『魔法少女まどか☆マギカ』の登場人物で、時間操作の能力を持つ魔法少女。",
+    name: "ドラえもん",
+    description: "未来から来た猫型ロボット。のび太を助けるために様々な道具を使う。",
     traits: {
-      isHuman: true,
-      isFemale: true,
-      hasMagic: true,
-      isAnime: true,
-      hasWeapon: true,
-      isProtagonist: false,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: true,
+      anime: true,
+      historical: false,
+      japanese: true,
+      hero: true,
+      magical: true,
+    },
   },
   {
     id: 8,
-    name: "トトロ",
-    image: "/totoro.jpg",
-    description: "スタジオジブリの映画『となりのトトロ』に登場する森の精霊。",
+    name: "美少女戦士セーラームーン",
+    description: "月を守護星に持つセーラー戦士。愛と正義のために戦う。",
     traits: {
-      isHuman: false,
-      isFemale: false,
-      hasMagic: true,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: false,
-      canFly: true,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true
-    }
+      female: true,
+      young: true,
+      famous: true,
+      fictional: true,
+      anime: true,
+      historical: false,
+      japanese: true,
+      hero: true,
+      magical: true,
+    },
   },
   {
     id: 9,
-    name: "ちびまる子ちゃん",
-    image: "/maruko.jpg",
-    description: "『ちびまる子ちゃん』の主人公、小学生の女の子。",
+    name: "ハリー・ポッター",
+    description: "魔法使いの少年。ヴォルデモート卿との戦いに挑む。",
     traits: {
-      isHuman: true,
-      isFemale: true,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: true,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: false,
-      isModernEra: true,
-      isAnimalLike: false,
-      isPopularWithKids: true
-    }
+      female: false,
+      young: true,
+      famous: true,
+      fictional: true,
+      anime: false,
+      historical: false,
+      japanese: false,
+      hero: true,
+      magical: true,
+    },
   },
   {
     id: 10,
-    name: "ポケモントレーナー・サトシ",
-    image: "/satoshi.jpg",
-    description: "『ポケットモンスター』シリーズの主人公、ポケモンマスターを目指す少年。",
+    name: "シャーロック・ホームズ",
+    description: "19世紀末のイギリスの探偵。卓越した推理力で難事件を解決。",
     traits: {
-      isHuman: true,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: true,
-      canFly: false,
-      hasAnimalCompanion: true,
-      hasSpecialPowers: false,
-      isModernEra: true,
-      isAnimalLike: false,
-      isPopularWithKids: true
-    }
+      female: false,
+      young: false,
+      famous: true,
+      fictional: true,
+      anime: false,
+      historical: false,
+      japanese: false,
+      hero: true,
+      magical: false,
+    },
   },
   {
     id: 11,
-    name: "猫バス",
-    image: "/nekobus.jpg",
-    description: "スタジオジブリ映画『となりのトトロ』に登場する、猫の形をした大きなバス。",
+    name: "初音ミク",
+    description: "クリプトン・フューチャー・メディアが開発したバーチャル・シンガー。",
     traits: {
-      isHuman: false,
-      isFemale: false,
-      hasMagic: true,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: false,
-      canFly: false,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true,
-      isAnimalLike: true,
-      isPopularWithKids: true
-    }
+      female: true,
+      young: true,
+      famous: true,
+      fictional: true,
+      anime: true,
+      historical: false,
+      japanese: true,
+      hero: false,
+      magical: false,
+    },
   },
   {
     id: 12,
-    name: "ドラえもん",
-    image: "/doraemon.jpg",
-    description: "22世紀から来た青い猫型ロボット、のび太の友達。",
+    name: "アンパンマン",
+    description: "顔がパンでできたヒーロー。困っている人を助ける。",
     traits: {
-      isHuman: false,
-      isFemale: false,
-      hasMagic: false,
-      isAnime: true,
-      hasWeapon: false,
-      isProtagonist: true,
-      canFly: true,
-      hasAnimalCompanion: false,
-      hasSpecialPowers: true,
-      isModernEra: true,
-      isAnimalLike: true,
-      isPopularWithKids: true
-    }
-  }
+      female: false,
+      young: true,
+      famous: true,
+      fictional: true,
+      anime: true,
+      historical: false,
+      japanese: true,
+      hero: true,
+      magical: true,
+    },
+  },
+  {
+    id: 13,
+    name: "ゴジラ",
+    description: "日本の特撮映画に登場する架空の怪獣。",
+    traits: {
+      female: false,
+      young: false,
+      famous: true,
+      fictional: true,
+      anime: false,
+      historical: false,
+      japanese: true,
+      hero: false,
+      magical: true,
+    },
+  },
+  {
+    id: 14,
+    name: "源義経",
+    description: "平安時代末期の武将。源頼朝の弟であり、数々の戦いで活躍。",
+    traits: {
+      female: false,
+      young: true,
+      famous: true,
+      fictional: false,
+      anime: false,
+      historical: true,
+      japanese: true,
+      hero: true,
+      magical: false,
+    },
+  },
+  {
+    id: 15,
+    name: "安倍晴明",
+    description: "平安時代の陰陽師。神秘的な力で多くの伝説を残す。",
+    traits: {
+      female: false,
+      young: false,
+      famous: true,
+      fictional: false,
+      anime: true,
+      historical: true,
+      japanese: true,
+      hero: false,
+      magical: true,
+    },
+  },
+];
+
+export const questions = [
+  { text: "このキャラクターは女性ですか？", trait: "female" },
+  { text: "このキャラクターは若いですか？", trait: "young" },
+  { text: "このキャラクターは有名ですか？", trait: "famous" },
+  { text: "このキャラクターは架空の人物ですか？", trait: "fictional" },
+  { text: "このキャラクターはアニメに登場しますか？", trait: "anime" },
+  { text: "このキャラクターは歴史上の人物ですか？", trait: "historical" },
+  { text: "このキャラクターは日本人ですか？", trait: "japanese" },
+  { text: "このキャラクターはヒーローですか？", trait: "hero" },
+  { text: "このキャラクターは魔法を使いますか？", trait: "magical" },
 ];
 
 export const characterReactions = {
   neutral: {
-    expression: "普通の表情で、考え中のようです。",
-    dialogue: "うーん、もう少し質問してみてね..."
+    dialogue: "さあ、質問してみて！ああ、「はい」か「いいえ」で答えられる質問ね。"
   },
   thinking: {
-    expression: "目を閉じて深く考えています。",
-    dialogue: "なるほど！私の考えているキャラクターについて質問してね！"
+    dialogue: "うーん、考え中..."
   },
   happy: {
-    expression: "少し笑顔になっています。",
-    dialogue: "いい質問だね！だんだん絞り込めてきたかも！"
+    dialogue: "おお！いい質問だね！だんだん絞り込まれてきたよ！"
   },
   excited: {
-    expression: "目を輝かせて興奮しています！",
-    dialogue: "あと少し！もうすぐ私が考えてるキャラクターがわかりそう！"
-  },
-  surprised: {
-    expression: "目を大きく開いて驚いています。",
-    dialogue: "えっ！？そんなことに気づくなんて、すごいね！"
+    dialogue: "素晴らしい！もう少しで答えが分かりそうだよ！"
   },
   correct: {
-    expression: "大きな笑顔で喜んでいます！",
-    dialogue: "やった！正解だよ！素晴らしい！"
+    dialogue: "おめでとう！正解だよ！"
   },
-  incorrect: {
-    expression: "少し残念そうな表情です。",
-    dialogue: "惜しかったね...また挑戦してみよう！"
+  wrong: {
+    dialogue: "残念！違うよ。もう一度挑戦してみる？"
   }
 };
+
+// Add some character emojis if they don't exist
+characters.forEach(char => {
+  if (!char.emoji) {
+    // Assign default emoji based on traits
+    if (char.traits.female) {
+      char.emoji = char.traits.young ? '👧' : '👩';
+    } else {
+      char.emoji = char.traits.young ? '👦' : '👨';
+    }
+    
+    // Special cases
+    if (char.traits.fictional && char.traits.hero) {
+      char.emoji = '🦸';
+    } else if (char.traits.fictional && !char.traits.hero) {
+      char.emoji = '🧙';
+    } else if (char.traits.historical) {
+      char.emoji = '👑';
+    }
+  }
+});
