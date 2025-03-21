@@ -2,6 +2,7 @@
 import React from 'react';
 import { useGame } from '@/context/GameContext';
 import { Progress } from '@/components/ui/progress';
+import { Wand2, SearchCheck, Trophy, QuestionMark } from 'lucide-react';
 
 const Header = () => {
   const { stage, progress } = useGame();
@@ -12,8 +13,7 @@ const Header = () => {
         <div className="flex items-center gap-2 mb-2">
           {/* Magic wand icon */}
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <div className="absolute w-1 h-6 bg-lavender rounded-full transform rotate-45"></div>
-            <div className="absolute w-2 h-2 bg-coral rounded-full top-0 right-0 animate-pulse-soft"></div>
+            <Wand2 className="text-lavender" />
           </div>
           
           <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-lavender to-coral bg-clip-text text-transparent">
@@ -21,12 +21,23 @@ const Header = () => {
           </h1>
         </div>
         
-        <p className="text-sm text-center text-muted-foreground max-w-md">
-          {stage === 'intro' 
-            ? '魔人の考えているキャラクターを当ててみよう！' 
-            : stage === 'playing' 
-              ? '質問に答えて、魔人の考えているキャラクターを絞り込もう！' 
-              : '結果発表！上手く当てられたかな？'}
+        <p className="text-sm text-center text-muted-foreground max-w-md flex items-center">
+          {stage === 'intro' ? (
+            <>
+              <QuestionMark size={16} className="inline mr-1 text-lavender" />
+              魔人の考えているキャラクターを当ててみよう！
+            </>
+          ) : stage === 'playing' ? (
+            <>
+              <SearchCheck size={16} className="inline mr-1 text-mint" />
+              質問して、魔人の考えているキャラクターを絞り込もう！
+            </>
+          ) : (
+            <>
+              <Trophy size={16} className="inline mr-1 text-amber-400" />
+              結果発表！上手く当てられたかな？
+            </>
+          )}
         </p>
         
         {stage === 'playing' && (

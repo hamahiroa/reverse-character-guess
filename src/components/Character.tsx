@@ -3,6 +3,7 @@ import React from 'react';
 import { useGame } from '@/context/GameContext';
 import { characterReactions } from '@/lib/gameData';
 import { cn } from '@/lib/utils';
+import { Sparkles, Star, Lightbulb } from 'lucide-react';
 
 const Character = () => {
   const { characterReaction } = useGame();
@@ -12,6 +13,13 @@ const Character = () => {
     <div className="relative flex flex-col items-center justify-center">
       {/* Character container with animation */}
       <div className="relative animate-float">
+        {/* Character with magic hat */}
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-16 bg-slate-800 rounded-t-full z-10">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <Star size={20} fill="#FFD700" stroke="#FFD700" className="animate-pulse-soft" />
+          </div>
+        </div>
+        
         {/* Character image */}
         <div className="relative w-40 h-40 md:w-56 md:h-56 bg-lavender rounded-full overflow-hidden border-4 border-white shadow-lg mb-4">
           <div className="absolute inset-0 bg-gradient-to-br from-lavender to-skyblue opacity-90"></div>
@@ -45,21 +53,38 @@ const Character = () => {
             </div>
           </div>
         </div>
+        
+        {/* Magic wand */}
+        <div className="absolute -bottom-4 right-0 transform rotate-45">
+          <div className="w-16 h-2 bg-slate-800 rounded-full"></div>
+          <div className="absolute -top-2 right-0">
+            <Sparkles size={16} className="text-amber-400" />
+          </div>
+        </div>
       </div>
       
       {/* Dialogue bubble */}
-      <div className="glass-panel py-3 px-6 max-w-xs md:max-w-sm animate-bounce-in">
+      <div className="glass-panel py-3 px-6 max-w-xs md:max-w-sm animate-bounce-in relative">
+        {/* Thought bubble */}
+        {characterReaction === 'thinking' && (
+          <div className="absolute -top-10 right-4">
+            <Lightbulb size={20} className="text-amber-400 animate-pulse-soft" />
+          </div>
+        )}
         <p className="text-sm md:text-base">{reaction.dialogue}</p>
       </div>
       
       {/* Magic particles effect */}
       <div className="absolute -z-10 inset-0 overflow-hidden">
-        {Array.from({ length: 10 }).map((_, i) => (
+        {Array.from({ length: 15 }).map((_, i) => (
           <div 
             key={i}
             className={cn(
               "absolute w-2 h-2 rounded-full opacity-70 animate-pulse-soft",
-              i % 3 === 0 ? "bg-lavender" : i % 3 === 1 ? "bg-mint" : "bg-coral"
+              i % 5 === 0 ? "bg-lavender" : 
+              i % 5 === 1 ? "bg-mint" : 
+              i % 5 === 2 ? "bg-coral" : 
+              i % 5 === 3 ? "bg-skyblue" : "bg-amber-400"
             )}
             style={{
               top: `${Math.random() * 100}%`,

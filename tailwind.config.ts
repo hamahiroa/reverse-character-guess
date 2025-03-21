@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,7 +66,6 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        // Game specific colors
         lavender: '#A09BE7',
         mint: '#AEECCD',
         coral: '#FF7F7F',
@@ -124,6 +122,10 @@ export default {
         'spin-slow': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
+        },
+        'confetti': {
+          '0%': { transform: 'translateY(-5%) rotate(0deg)', opacity: '1' },
+          '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' }
         }
       },
       animation: {
@@ -137,7 +139,8 @@ export default {
         'bounce-in': 'bounce-in 0.5s ease-out',
         'slide-in-right': 'slide-in-right 0.5s ease-out',
         'slide-in-left': 'slide-in-left 0.5s ease-out',
-        'spin-slow': 'spin-slow 15s linear infinite'
+        'spin-slow': 'spin-slow 15s linear infinite',
+        'confetti': 'confetti 4s ease-in-out forwards'
       },
       fontFamily: {
         'sans': ['Nunito', 'system-ui', 'sans-serif'],

@@ -1,4 +1,3 @@
-
 export const questions = [
   {
     id: 1,
@@ -49,6 +48,16 @@ export const questions = [
     id: 10,
     text: "あなたが考えているキャラクターは現代に生きていますか？",
     trait: "isModernEra"
+  },
+  {
+    id: 11,
+    text: "あなたが考えているキャラクターは動物または動物の特徴を持っていますか？",
+    trait: "isAnimalLike"
+  },
+  {
+    id: 12,
+    text: "あなたが考えているキャラクターは子供に人気がありますか？",
+    trait: "isPopularWithKids"
   }
 ];
 
@@ -196,29 +205,109 @@ export const characters = [
       hasSpecialPowers: true,
       isModernEra: true
     }
+  },
+  {
+    id: 9,
+    name: "ちびまる子ちゃん",
+    image: "/maruko.jpg",
+    description: "『ちびまる子ちゃん』の主人公、小学生の女の子。",
+    traits: {
+      isHuman: true,
+      isFemale: true,
+      hasMagic: false,
+      isAnime: true,
+      hasWeapon: false,
+      isProtagonist: true,
+      canFly: false,
+      hasAnimalCompanion: false,
+      hasSpecialPowers: false,
+      isModernEra: true,
+      isAnimalLike: false,
+      isPopularWithKids: true
+    }
+  },
+  {
+    id: 10,
+    name: "ポケモントレーナー・サトシ",
+    image: "/satoshi.jpg",
+    description: "『ポケットモンスター』シリーズの主人公、ポケモンマスターを目指す少年。",
+    traits: {
+      isHuman: true,
+      isFemale: false,
+      hasMagic: false,
+      isAnime: true,
+      hasWeapon: false,
+      isProtagonist: true,
+      canFly: false,
+      hasAnimalCompanion: true,
+      hasSpecialPowers: false,
+      isModernEra: true,
+      isAnimalLike: false,
+      isPopularWithKids: true
+    }
+  },
+  {
+    id: 11,
+    name: "猫バス",
+    image: "/nekobus.jpg",
+    description: "スタジオジブリ映画『となりのトトロ』に登場する、猫の形をした大きなバス。",
+    traits: {
+      isHuman: false,
+      isFemale: false,
+      hasMagic: true,
+      isAnime: true,
+      hasWeapon: false,
+      isProtagonist: false,
+      canFly: false,
+      hasAnimalCompanion: false,
+      hasSpecialPowers: true,
+      isModernEra: true,
+      isAnimalLike: true,
+      isPopularWithKids: true
+    }
+  },
+  {
+    id: 12,
+    name: "ドラえもん",
+    image: "/doraemon.jpg",
+    description: "22世紀から来た青い猫型ロボット、のび太の友達。",
+    traits: {
+      isHuman: false,
+      isFemale: false,
+      hasMagic: false,
+      isAnime: true,
+      hasWeapon: false,
+      isProtagonist: true,
+      canFly: true,
+      hasAnimalCompanion: false,
+      hasSpecialPowers: true,
+      isModernEra: true,
+      isAnimalLike: true,
+      isPopularWithKids: true
+    }
   }
 ];
 
 export const characterReactions = {
   neutral: {
     expression: "普通の表情で、考え中のようです。",
-    dialogue: "うーん、もう少し情報が必要だな..."
+    dialogue: "うーん、もう少し質問してみてね..."
   },
   thinking: {
     expression: "目を閉じて深く考えています。",
-    dialogue: "なるほど、考えているキャラクターを当ててみるね！"
+    dialogue: "なるほど！私の考えているキャラクターについて質問してね！"
   },
   happy: {
     expression: "少し笑顔になっています。",
-    dialogue: "おっ、だんだん絞り込めてきたかも！"
+    dialogue: "いい質問だね！だんだん絞り込めてきたかも！"
   },
   excited: {
     expression: "目を輝かせて興奮しています！",
-    dialogue: "あと少し！もうすぐ分かりそう！"
+    dialogue: "あと少し！もうすぐ私が考えてるキャラクターがわかりそう！"
   },
   surprised: {
     expression: "目を大きく開いて驚いています。",
-    dialogue: "えっ！？そうなんだ！？"
+    dialogue: "えっ！？そんなことに気づくなんて、すごいね！"
   },
   correct: {
     expression: "大きな笑顔で喜んでいます！",
