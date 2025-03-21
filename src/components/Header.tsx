@@ -2,7 +2,7 @@
 import React from 'react';
 import { useGame } from '@/context/GameContext';
 import { Progress } from '@/components/ui/progress';
-import { Wand2, SearchCheck, Trophy, QuestionMark } from 'lucide-react';
+import { Wand2, SearchCheck, Trophy, HelpCircle } from 'lucide-react';
 
 const Header = () => {
   const { stage, progress } = useGame();
@@ -24,7 +24,7 @@ const Header = () => {
         <p className="text-sm text-center text-muted-foreground max-w-md flex items-center">
           {stage === 'intro' ? (
             <>
-              <QuestionMark size={16} className="inline mr-1 text-lavender" />
+              <HelpCircle size={16} className="inline mr-1 text-lavender" />
               魔人の考えているキャラクターを当ててみよう！
             </>
           ) : stage === 'playing' ? (
