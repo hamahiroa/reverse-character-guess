@@ -1,4 +1,24 @@
-export const characters = [
+
+// Define the Character type first to ensure TypeScript knows emoji exists
+interface Character {
+  id: number;
+  name: string;
+  description: string;
+  emoji?: string; // Added emoji property
+  traits: {
+    female: boolean;
+    young: boolean;
+    famous: boolean;
+    fictional: boolean;
+    anime: boolean;
+    historical: boolean;
+    japanese: boolean;
+    hero: boolean;
+    magical: boolean;
+  };
+}
+
+export const characters: Character[] = [
   {
     id: 1,
     name: "織田信長",

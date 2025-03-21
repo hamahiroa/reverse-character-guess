@@ -1,12 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { useGame } from '@/context/GameContext';
 import { characterReactions } from '@/lib/gameData';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { Sparkles, Star, Lightbulb, Crown, Magic, Wand } from 'lucide-react';
+import { Sparkles, Star, Lightbulb, Crown, Wand } from 'lucide-react';
 
-// Floating animals that appear randomly
 const FloatingFriend = ({ delay }: { delay: number }) => {
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const animals = ["🐱", "🐶", "🐰", "🐦", "🦊", "🐻", "🦁", "🐯", "🐼"];
@@ -64,12 +62,10 @@ const Character = () => {
 
   return (
     <div className="relative flex flex-col items-center justify-center">
-      {/* Add floating friends in background */}
       {Array.from({ length: 5 }).map((_, i) => (
         <FloatingFriend key={i} delay={i * 0.8} />
       ))}
       
-      {/* Character container with animation */}
       <motion.div 
         className="relative"
         animate={{ 
@@ -81,7 +77,6 @@ const Character = () => {
           repeatType: "reverse"
         }}
       >
-        {/* Magic hat */}
         <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-20 bg-slate-800 rounded-t-full z-10">
           <motion.div 
             className="absolute -top-6 left-1/2 transform -translate-x-1/2"
@@ -114,7 +109,6 @@ const Character = () => {
           </motion.div>
         </div>
         
-        {/* Character body */}
         <motion.div 
           className="relative w-44 h-44 md:w-60 md:h-60 bg-gradient-to-br from-lavender to-purple-400 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4"
           animate={{ 
@@ -130,10 +124,8 @@ const Character = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-lavender to-skyblue opacity-90"></div>
           
-          {/* Face */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-32 h-32 md:w-40 md:h-40 relative">
-              {/* Eyes */}
               <motion.div 
                 className="absolute top-1/4 left-1/4 w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center"
                 animate={{ 
@@ -190,7 +182,6 @@ const Character = () => {
                 ></motion.div>
               </motion.div>
               
-              {/* Mouth changes based on reaction */}
               <motion.div 
                 className={cn(
                   "absolute bottom-1/4 left-1/2 transform -translate-x-1/2",
@@ -213,7 +204,6 @@ const Character = () => {
             </div>
           </div>
           
-          {/* Magic wand */}
           <motion.div 
             className="absolute -bottom-2 right-4 transform rotate-45"
             animate={{ 
@@ -241,7 +231,6 @@ const Character = () => {
           </motion.div>
         </motion.div>
         
-        {/* Magic aura when thinking */}
         {characterReaction === 'thinking' && (
           <motion.div 
             className="absolute inset-0 rounded-full bg-lavender/10"
@@ -257,7 +246,6 @@ const Character = () => {
           />
         )}
         
-        {/* Answer bubble */}
         {showAnswer && answers.length > 0 && askedQuestions.length > 0 && (
           <motion.div 
             className="absolute -right-20 top-10 bg-white px-4 py-2 rounded-xl border border-lavender shadow-lg"
@@ -273,14 +261,12 @@ const Character = () => {
         )}
       </motion.div>
       
-      {/* Dialogue bubble */}
       <motion.div 
         className="glass-panel py-3 px-6 max-w-xs md:max-w-sm relative mt-2"
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        {/* Thought bubble */}
         {characterReaction === 'thinking' && (
           <motion.div 
             className="absolute -top-10 right-4"
@@ -311,7 +297,7 @@ const Character = () => {
               }}
             />
           ) : (
-            <Magic size={18} className="text-lavender" />
+            <Wand size={18} className="text-lavender" />
           )}
           <p className="text-sm md:text-base">{reaction.dialogue}</p>
         </div>
@@ -323,7 +309,6 @@ const Character = () => {
         )}
       </motion.div>
       
-      {/* Magic particles effect */}
       <div className="absolute -z-10 inset-0 overflow-hidden">
         {Array.from({ length: 15 }).map((_, i) => (
           <motion.div 
