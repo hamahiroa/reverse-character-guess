@@ -1,13 +1,20 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import GameContainer from '@/components/GameContainer';
 import { GameProvider } from '@/context/GameContext';
 import { Star, Cloud, Sun, Moon } from 'lucide-react';
 
 const Index = () => {
+  useEffect(() => {
+    console.log("Index component mounted");
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream to-lavender/10 flex flex-col items-center p-4 pb-16">
+      <div className="fixed top-0 left-0 m-4 p-2 bg-white/80 text-xs text-gray-500 rounded shadow-sm z-50">
+        アプリケーションを読み込み中...
+      </div>
+      
       <div className="absolute inset-0 overflow-hidden -z-10">
         {/* Background decoration elements */}
         <div className="absolute top-1/4 left-10 w-40 h-40 rounded-full bg-mint/10 animate-spin-slow"></div>
