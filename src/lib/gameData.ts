@@ -4,7 +4,7 @@ interface Character {
   id: number;
   name: string;
   description: string;
-  emoji?: string; // Added emoji property
+  emoji: string; // 明示的にemojiプロパティを定義
   traits: {
     female: boolean;
     young: boolean;
@@ -23,6 +23,7 @@ export const characters: Character[] = [
     id: 1,
     name: "織田信長",
     description: "戦国時代の武将。革新的な政策と強力な軍事力で知られる。",
+    emoji: "👹",
     traits: {
       female: false,
       young: false,
@@ -39,6 +40,7 @@ export const characters: Character[] = [
     id: 2,
     name: "卑弥呼",
     description: "3世紀頃の日本の女王。邪馬台国の支配者として知られる。",
+    emoji: "👸",
     traits: {
       female: true,
       young: false,
@@ -55,6 +57,7 @@ export const characters: Character[] = [
     id: 3,
     name: "坂本龍馬",
     description: "幕末の志士。薩長同盟の成立に尽力し、日本の近代化に貢献。",
+    emoji: "🗡️",
     traits: {
       female: false,
       young: false,
@@ -71,6 +74,7 @@ export const characters: Character[] = [
     id: 4,
     name: "紫式部",
     description: "平安時代の女流作家。『源氏物語』の作者として知られる。",
+    emoji: "📚",
     traits: {
       female: true,
       young: false,
@@ -87,6 +91,7 @@ export const characters: Character[] = [
     id: 5,
     name: "徳川家康",
     description: "江戸幕府の初代将軍。260年以上にわたる平和な時代を築いた。",
+    emoji: "⛩️",
     traits: {
       female: false,
       young: false,
@@ -103,6 +108,7 @@ export const characters: Character[] = [
     id: 6,
     name: "孫悟空",
     description: "中国の小説『西遊記』の主人公。強力な力と機知に富む。",
+    emoji: "🐒",
     traits: {
       female: false,
       young: false,
@@ -119,6 +125,7 @@ export const characters: Character[] = [
     id: 7,
     name: "ドラえもん",
     description: "未来から来た猫型ロボット。のび太を助けるために様々な道具を使う。",
+    emoji: "🐱",
     traits: {
       female: false,
       young: false,
@@ -135,6 +142,7 @@ export const characters: Character[] = [
     id: 8,
     name: "美少女戦士セーラームーン",
     description: "月を守護星に持つセーラー戦士。愛と正義のために戦う。",
+    emoji: "🌙",
     traits: {
       female: true,
       young: true,
@@ -151,6 +159,7 @@ export const characters: Character[] = [
     id: 9,
     name: "ハリー・ポッター",
     description: "魔法使いの少年。ヴォルデモート卿との戦いに挑む。",
+    emoji: "⚡",
     traits: {
       female: false,
       young: true,
@@ -167,6 +176,7 @@ export const characters: Character[] = [
     id: 10,
     name: "シャーロック・ホームズ",
     description: "19世紀末のイギリスの探偵。卓越した推理力で難事件を解決。",
+    emoji: "🔍",
     traits: {
       female: false,
       young: false,
@@ -183,6 +193,7 @@ export const characters: Character[] = [
     id: 11,
     name: "初音ミク",
     description: "クリプトン・フューチャー・メディアが開発したバーチャル・シンガー。",
+    emoji: "🎤",
     traits: {
       female: true,
       young: true,
@@ -199,6 +210,7 @@ export const characters: Character[] = [
     id: 12,
     name: "アンパンマン",
     description: "顔がパンでできたヒーロー。困っている人を助ける。",
+    emoji: "🍞",
     traits: {
       female: false,
       young: true,
@@ -215,6 +227,7 @@ export const characters: Character[] = [
     id: 13,
     name: "ゴジラ",
     description: "日本の特撮映画に登場する架空の怪獣。",
+    emoji: "🦖",
     traits: {
       female: false,
       young: false,
@@ -231,6 +244,7 @@ export const characters: Character[] = [
     id: 14,
     name: "源義経",
     description: "平安時代末期の武将。源頼朝の弟であり、数々の戦いで活躍。",
+    emoji: "⚔️",
     traits: {
       female: false,
       young: true,
@@ -247,6 +261,7 @@ export const characters: Character[] = [
     id: 15,
     name: "安倍晴明",
     description: "平安時代の陰陽師。神秘的な力で多くの伝説を残す。",
+    emoji: "✨",
     traits: {
       female: false,
       young: false,
@@ -294,23 +309,4 @@ export const characterReactions = {
   }
 };
 
-// Add some character emojis if they don't exist
-characters.forEach(char => {
-  if (!char.emoji) {
-    // Assign default emoji based on traits
-    if (char.traits.female) {
-      char.emoji = char.traits.young ? '👧' : '👩';
-    } else {
-      char.emoji = char.traits.young ? '👦' : '👨';
-    }
-    
-    // Special cases
-    if (char.traits.fictional && char.traits.hero) {
-      char.emoji = '🦸';
-    } else if (char.traits.fictional && !char.traits.hero) {
-      char.emoji = '🧙';
-    } else if (char.traits.historical) {
-      char.emoji = '👑';
-    }
-  }
-});
+// emojiは既に各キャラクターに直接設定したので、このコードは不要
