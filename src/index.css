@@ -1,53 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Nunito:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 47 100% 99%;
+    --foreground: 250 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 250 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 250 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 252 61% 76%;
+    --primary-foreground: 250 20% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 151 62% 81%;
+    --secondary-foreground: 250 20% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 250 5% 94%;
+    --muted-foreground: 250 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 192 67% 74%;
+    --accent-foreground: 250 20% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 250 10% 90%;
+    --input: 250 10% 90%;
+    --ring: 252 61% 76%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,32 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-cream text-foreground font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .game-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg p-6 transition-all;
+  }
+  
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/30 rounded-xl shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-lavender text-white font-medium py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[1px];
+  }
+  
+  .btn-secondary {
+    @apply bg-mint text-foreground font-medium py-3 px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px] active:translate-y-[1px];
+  }
+  
+  .chip {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium rounded-full;
   }
 }
